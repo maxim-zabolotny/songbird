@@ -1,33 +1,14 @@
 import React from 'react'
 import './style.css'
 import bird from '../../img/bird.06a46938.jpg'
+import Options from "./options";
 
 const Answer = () => {
     return (
         <div className={'answers-block'}>
             <div className={'answers-block-variants'}>
                 <ul className={'answers-list'}>
-                    <li className={'answers-list-item'} id={'index'}>
-                        <span className={'li-btn  red'}></span>
-                        Воробьи
-                    </li>
-                    <li className={'answers-list-item'} id={'index'}>
-                        <span className={'li-btn'}></span>
-                        Чайка
-                    </li>
-                    <li className={'answers-list-item'} id={'index'}>
-                        <span className={'li-btn'}></span>
-                        Кукушка
-                    </li>
-                    <li className={'answers-list-item'} id={'index'}>
-                        <span className={'li-btn'}></span>
-                        Дрозд
-                    </li>
-                    <li className={'answers-list-item'} id={'index'}>
-                        <span className={'li-btn'}></span>
-                        Ласточка
-                    </li>
-
+                    <Options />
                 </ul>
             </div>
             <div className={'description-block'}>

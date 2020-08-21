@@ -7,7 +7,7 @@ const initialState = {
     birdCategory: 0,
     score: 0,
     secretBird: birdsData[0][randomBird],
-    selectedBird: birdsData[0][0],
+    selectedBird: null,
     attemptCount: 0,
     guessed: false,
     gameOver: false,

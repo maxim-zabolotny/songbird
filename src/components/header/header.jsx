@@ -1,15 +1,16 @@
 import React from 'react'
 import './style.css'
 import logo from '../../img/logo.svg'
+import {connect} from "react-redux";
 
-const Header = () => {
+const Header = ({ score }) => {
 
 
     return (
             <header className="header">
                 <div className="top-panel">
                     <img src={logo} className="logo"/>
-                    <h5>Score:<span className="score">5</span></h5>
+                    <h5>Score:<span className="score">{score}</span></h5>
                 </div>
 
                 <ul className="pagination">
@@ -36,4 +37,9 @@ const Header = () => {
     )
 }
 
-export default Header
+const mapStateToProps = (state) => ({
+    score: state.score
+})
+
+
+export default connect(mapStateToProps, null)(Header)

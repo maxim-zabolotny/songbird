@@ -7,7 +7,7 @@ const Options = ({birdGroup}) => {
             {birdGroup.map(bird => {
                 return (
                     <li className={'answers-list-item'} id={bird.id} key={bird.id}>
-                        <span className={'li-btn green'}></span>
+                        <span className={'li-btn'}></span>
                         {bird.name}
                     </li>
                 )

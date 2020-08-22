@@ -79,6 +79,10 @@
     background-color: #444;
 }
 
+.answers-list .answers-list-item span {
+    background-color: #4444;
+}
+
 .answers-list .answers-list-item span.red {
     background-color: red;
 }

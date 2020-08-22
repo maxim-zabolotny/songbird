@@ -18,7 +18,8 @@ const initialState = {
 const birdsReducer = (state = initialState, action) => {
     switch (action.type) {
         case SET_SELECTED_BIRD: {
-            return {...state, selectedBird: action.id}
+            let selected = state.birds[state.birdCategory][action.id-1]
+            return {...state, selectedBird: selected}
         }
         default: return state
     }

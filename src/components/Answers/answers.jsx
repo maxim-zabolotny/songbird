@@ -1,15 +1,15 @@
 import React from 'react'
 import './style.css'
-import bird from '../../img/bird.06a46938.jpg'
 import Options from "./options";
 import {connect} from "react-redux";
 
-const Answer = ({ selectedBird }) => {
+const Answer = ({selectedBird}) => {
+
     return (
         <div className={'answers-block'}>
             <div className={'answers-block-variants'}>
                 <ul className={'answers-list'}>
-                    <Options />
+                    <Options/>
                 </ul>
             </div>
             <div className={'description-block'}>
@@ -23,13 +23,13 @@ const Answer = ({ selectedBird }) => {
                         : <React.Fragment>
                             <div className={'card-body'}>
                                 <div className="card-body">
-                                    <img className="bird-image" src={bird}/>
+                                    <img className="bird-image" src={selectedBird.image}/>
                                     <ul className="list-group-card">
-                                        <li><h4>Ворон</h4></li>
-                                        <li>Corvus corax</li>
+                                        <li><h4>{selectedBird.name}</h4></li>
+                                        <li>{selectedBird.species}</li>
                                         <li>
                                             <div className="audio-player" id="audio-player2">
-                                                <audio id="audio2"/>
+                                                <audio id="audio2" src={selectedBird.audio}/>
 
                                                 <div className="controls">
                                                     <div id="playback-button2" className="playback-button paused">
@@ -53,9 +53,7 @@ const Answer = ({ selectedBird }) => {
                                     </ul>
                                 </div>
                             </div>
-                            <span className="bird-description">
-                            Ворон – крупная птица. Длина тела достигает 70 сантиметров, размах крыльев – до полутора метров. Вороны населяют окрестности Тауэра. В Англии бытует поверье, что в день, когда черные вороны улетят от Тауэра, монархия рухнет.
-                        </span>
+                            <span className="bird-description">{selectedBird.description}</span>
                         </React.Fragment>
                     }
 

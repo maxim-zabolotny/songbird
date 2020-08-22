@@ -1,4 +1,5 @@
 import birdsData from "../../birds";
+import {SET_SELECTED_BIRD} from "../actions/actions-types";
 
 const randomBird = Math.floor(Math.random()*6)
 
@@ -16,6 +17,9 @@ const initialState = {
 
 const birdsReducer = (state = initialState, action) => {
     switch (action.type) {
+        case SET_SELECTED_BIRD: {
+            return {...state, selectedBird: action.id}
+        }
         default: return state
     }
 }

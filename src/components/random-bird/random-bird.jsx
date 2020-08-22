@@ -22,7 +22,7 @@ const RandomBird = () => {
                                 <div className={'timebar'} id={'timebar'}>
                                     <div className={'timebar-bar'} id={'timebar-bar'}>
                                     </div>
-                                    <div className="timebar-circle" id="timebar-circle"></div>
+                                    <div className={"timebar-circle"} id={"timebar-circle"}></div>
                                     <div className="timebar-time-info">
                                         <div>1</div>
                                         <div>3</div>

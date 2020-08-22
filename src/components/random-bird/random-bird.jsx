@@ -14,14 +14,13 @@ const RandomBird = () => {
                     </li>
                     <li className={'question-panel-item'}>
                         <div className={'audio-player'} id={'audio-player'}>
-                            <audio id={'audio'} src={audio} />
+                            <audio id={'audio'} src={audio}/>
                             <div className="controls">
                                 <div id={'playback-button'} className={'playback-button paused'}>
                                 <div></div>
                                 </div>
                                 <div className={'timebar'} id={'timebar'}>
-                                    <div className={'timebar-bar'} id={'timebar-bar'} style={{backgroundImage: 'linear-gradient(to right, rgb(0, 188, 140) 0%, rgb(61, 133, 140), rgb(115, 115, 115), rgb(115, 115, 115) 100%)'}}>
-
+                                    <div className={'timebar-bar'} id={'timebar-bar'}>
                                     </div>
                                     <div className="timebar-circle" id="timebar-circle"></div>
                                     <div className="timebar-time-info">
@@ -42,7 +41,6 @@ const RandomBird = () => {
                                         />
                                     </label>
                                 </div>
-
                             </div>
                         </div>
                     </li>

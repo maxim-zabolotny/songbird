@@ -15,13 +15,11 @@
 
 
 .header {
-    margin-top: .5rem;
     display: flex;
     flex-direction: column;
 }
 
 .top-panel {
-    margin-top: 15px;
     margin-bottom: 0px;
     display: flex;
     justify-content: space-between;

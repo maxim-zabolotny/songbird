@@ -1,9 +1,28 @@
-import React from 'react'
+import React, {useEffect, useState} from 'react'
 import './style.css'
 import Options from "./options";
 import {connect} from "react-redux";
+import {setNextLevelAC} from "../../redux/actions/actions";
 
-const Answer = ({selectedBird}) => {
+const Answer = ({selectedBird, nextLevel, guessed}) => {
+
+    const [play, setPlay] = useState(false)
+    const [on, setOn] = useState(false)
+
+    useEffect(() => {
+       setOn(true)
+    },[])
+
+
+    let audio = React.createRef()
+    console.log(audio);
+
+    useEffect(() => {
+        if (on) {
+            play ? audio.current.play() : audio.current.pause()
+        } else return
+
+    },[play])
 
     return (
         <div className={'answers-block'}>
@@ -15,7 +34,7 @@ const Answer = ({selectedBird}) => {
             <div className={'description-block'}>
 
                 <div className={'description-block-card'}>
-                    {selectedBird == null ?
+                    {selectedBird === null ?
                         <p className={'task-instructions'}>
                             <span>Послушайте плеер и </span>
                             <span>Выберите птицу из списка.</span>
@@ -29,10 +48,9 @@ const Answer = ({selectedBird}) => {
                                         <li>{selectedBird.species}</li>
                                         <li>
                                             <div className="audio-player" id="audio-player2">
-                                                <audio id="audio2" src={selectedBird.audio}/>
-
+                                                <audio src={selectedBird.audio} ref={audio}/>
                                                 <div className="controls">
-                                                    <div id="playback-button2" className="playback-button paused">
+                                                    <div id="playback-button2" onClick={() => setPlay(!play)} className="playback-button paused">
                                                         <div></div>
 
                                                     </div>
@@ -59,13 +77,21 @@ const Answer = ({selectedBird}) => {
 
                 </div>
             </div>
-            <button className="next-btn">Next level</button>
+            <button className={guessed ? "next-btn green" : "next-btn"}
+                    onClick={nextLevel}
+                    disabled={!guessed}
+            >Next level</button>
         </div>
     )
 }
 
 const mapStateToProps = (state) => ({
-    selectedBird: state.selectedBird
+    selectedBird: state.selectedBird,
+    guessed: state.guessed
 })
 
-export default connect(mapStateToProps, null)(Answer)
+const mapDispatchToProps = (dispatch) => ({
+    nextLevel: () => dispatch(setNextLevelAC())
+})
+
+export default connect(mapStateToProps, mapDispatchToProps)(Answer)

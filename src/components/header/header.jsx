@@ -4,7 +4,7 @@ import logo from '../../img/logo.svg'
 import {connect} from "react-redux";
 import {typeBirds} from '../../typeBirds'
 
-const Header = ({ score, birdCategory }) => {
+const Header = ({ score, birdCategory}) => {
 
 
     return (
@@ -29,7 +29,8 @@ const Header = ({ score, birdCategory }) => {
 
 const mapStateToProps = (state) => ({
     score: state.score,
-    birdCategory: state.birdCategory
+    birdCategory: state.birdCategory,
+
 })
 
 

@@ -10,14 +10,14 @@ const Header = ({ score, birdCategory}) => {
     return (
             <header className="header">
                 <div className="top-panel">
-                    <img src={logo} className="logo"/>
+                    <img src={logo} className="logo" alt={'logo'} />
                     <h5>Score:<span className="score">{score}</span></h5>
                 </div>
 
                 <ul className="pagination">
                     {typeBirds.map((type, index) => {
                         return (
-                            <li key={index} className= {(birdCategory == index) ? "page-item active" : "page-item"}>
+                            <li key={index} className= {(birdCategory === index) ? "page-item active" : "page-item"}>
                                 <a href="#" className="page-link">{type}</a>
                             </li>
                         )

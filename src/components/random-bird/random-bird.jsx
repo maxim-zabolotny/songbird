@@ -7,13 +7,22 @@ import {connect} from "react-redux";
 
 const RandomBird = ({selectedBird, guessed, secretBird}) => {
 
-    const [play, setPlay] = useState(true)
+    const [play, setPlay] = useState(false)
+    const [on, setOn] = useState(false)
+
+    useEffect(() => {
+        setOn(true)
+    },[])
 
 
     let audio = React.createRef()
     console.log(audio);
+
     useEffect(() => {
-        play ? audio.current.play() : audio.current.pause()
+        if (on) {
+            play ? audio.current.play() : audio.current.pause()
+        } else return
+
     },[play])
 
     return (
@@ -29,7 +38,7 @@ const RandomBird = ({selectedBird, guessed, secretBird}) => {
                             className={'audio-player'}
                             id={'audio-player'}
                         >
-                            <audio src={secretBird.audio} id={'audio'} ref={audio} autoPlay/>
+                            <audio src={secretBird.audio} id={'audio'} ref={audio}/>
                             <div className="controls">
                                 <div id={'playback-button'} className={'playback-button paused'} onClick={() => setPlay(!play)}>
                                 <div></div>

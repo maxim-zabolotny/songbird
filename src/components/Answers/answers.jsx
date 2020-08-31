@@ -15,7 +15,6 @@ const Answer = ({selectedBird, nextLevel, guessed}) => {
 
 
     let audio = React.createRef()
-    console.log(audio);
 
     useEffect(() => {
         if (on) {

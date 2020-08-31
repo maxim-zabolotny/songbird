@@ -16,7 +16,6 @@ const RandomBird = ({selectedBird, guessed, secretBird}) => {
 
 
     let audio = React.createRef()
-    console.log(audio);
 
     useEffect(() => {
         if (on) {
